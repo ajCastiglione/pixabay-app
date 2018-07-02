@@ -40,6 +40,7 @@ export default class Search extends Component {
           />
           <select
             name="search-limit"
+            className="custom-select"
             onChange={this.handleLimit}
             defaultValue={this.state.limit}
           >
