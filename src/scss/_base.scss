@@ -1,15 +1,36 @@
-/* Global section */
+/*****************
+Global section
+******************/
 
 body,
 html {
-    font-family: $body;
+  font-family: $body;
 }
 
 /*****************
-header section
+Header section
 ******************/
 
-
+.App-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: $tur;
+  a {
+    display: block;
+    min-width: 125px;
+  }
+  .App-logo {
+    max-width: 125px;
+    animation: App-logo-spin 15s linear infinite;
+  }
+  .App-title {
+    color: $white;
+    margin: 0;
+    font-family: $title;
+  }
+}
 
 /*********************
 Main content 

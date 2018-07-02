@@ -1,28 +1,28 @@
 /* Variables */
-@import './variables';
+@import "./variables";
 
 /* animations */
-@import './animations';
+@import "./animations";
 
 /* mobile / base */
-@import './_base';
+@import "./_base";
 
 /* small tablet to tablet */
 @media screen and (min-width: 481px) {
-  @import './_481up';
+  @import "./_481up";
 }
 
 /* tablet to small laptop */
 @media screen and (min-width: 768px) {
-  @import './_768up';
+  @import "./_768up";
 }
 
 /* small laptop to small monitor */
-@media screen and (min-width:1030px) {
-  @import './_1030up';
+@media screen and (min-width: 1030px) {
+  @import "./_1030up";
 }
 
 /* average desktop and up */
-@media screen and (min-width:1240px) {
-  @import './_1240up';
+@media screen and (min-width: 1240px) {
+  @import "./_1240up";
 }
