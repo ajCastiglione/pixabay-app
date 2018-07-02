@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../config/config";
+import ImageResults from "./image-results/ImageResults";
 
 export default class Search extends Component {
   state = {
@@ -13,13 +14,11 @@ export default class Search extends Component {
   handleInput = e => {
     let { value } = e.target;
     this.setState({ query: value }, () => {
-      let { key, url, limit } = this.state;
-      fetch(`${url}?key=${key}&per_page=${limit}&type=photo`)
+      let { key, url, limit, query } = this.state;
+      fetch(`${url}?key=${key}&q=${query}&per_page=${limit}&type=photo`)
         .then(res => res.json())
         .then(res => {
-          this.setState({ results: res }, () =>
-            console.log(this.state.results)
-          );
+          this.setState({ results: res.hits });
         })
         .catch(err => console.error(err));
     });
@@ -31,21 +30,6 @@ export default class Search extends Component {
   };
 
   render() {
-    let images =
-      this.state.results.length > 0
-        ? this.state.results.map((el, id) => (
-            <div className="single-result" key={id}>
-              <div
-                className="result-content"
-                style={{ backgroundImage: `url(${el.hits.largeImageURL})` }}
-              >
-                <h2 className="result-title">{el.hits.tags}</h2>
-                <p className="result-views">Views: {el.hits.views}</p>
-                <p className="result-dl">Downloads: {el.hits.downloads}</p>
-              </div>
-            </div>
-          ))
-        : null;
     return (
       <section className="query-container">
         <div className="search-bar">
@@ -67,7 +51,9 @@ export default class Search extends Component {
           </select>
         </div>
 
-        <div className="inner-query large-wrapper">{images}</div>
+        {this.state.query !== "" ? (
+          <ImageResults images={this.state.results} />
+        ) : null}
       </section>
     );
   }
