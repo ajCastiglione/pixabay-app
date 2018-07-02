@@ -57,13 +57,38 @@ Main content
 .single-result {
   display: inline-block;
   width: 95%;
-  margin: 1%;
+  margin: 15px 1%;
 
   .result-content {
+    position: relative;
+    min-height: 400px;
     height: 100%;
     padding: 2rem 1rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+  }
+  .result-info {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: $white;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+
+    .result-title {
+      margin: 5px 0;
+      text-align: center;
+    }
+    .result-views,
+    .result-dl {
+      display: inline-block;
+      width: 48%;
+      margin: 5px 1%;
+    }
+    .result-dl {
+      text-align: right;
+    }
   }
 }

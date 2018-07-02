@@ -10,4 +10,8 @@ Main content
 *********************/
 .single-result {
   width: 47%;
+
+  .result-content {
+    min-height: 300px;
+  }
 }
