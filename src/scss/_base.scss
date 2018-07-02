@@ -35,3 +35,35 @@ Header section
 /*********************
 Main content 
 *********************/
+/* input section */
+.form-control {
+  border: 0;
+  border-bottom: 2px solid $reactblue;
+  color: $black;
+  min-height: 40px;
+  padding: 1em 0.5em;
+  &:focus,
+  &:active {
+    outline: 3px solid $reactblue;
+  }
+}
+
+.query-results {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+.single-result {
+  display: inline-block;
+  width: 95%;
+  margin: 1%;
+
+  .result-content {
+    height: 100%;
+    padding: 2rem 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
